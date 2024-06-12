@@ -7,6 +7,7 @@
                 {{ project.name }} - {{ project.description }}
             </li>
         </ul>
+        
     </div>
 </template>
 
