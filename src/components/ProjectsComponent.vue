@@ -11,18 +11,29 @@
 </template>
 
 <script>
-import axios from axios;
+import axios from 'axios';
 
 export default {
     data() {
         return {
-            projects [],
+            projects: [],
         };
     },
     created() {
         this.fetchProjects();
     },
-}
+    methods: {
+        async fetchProjects() {
+            try {
+                const response = await axios.get('http://127.0.0.1:8000/api/projects');
+                this.projects = response.data;
+            } catch (error) {
+                console.error('Errore nel recuperare i progetti:', error);
+            }
+        }
+    }
+};
 </script>
 
-<style></style>
+<style>
+</style>
