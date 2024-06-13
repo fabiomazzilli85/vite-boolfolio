@@ -18,7 +18,7 @@ import ProjectCard from './ProjectCard.vue';
 
 export default {
     components: {
-        ProjectsComponent
+        ProjectCard
     },
     data() {
         return {
@@ -32,7 +32,7 @@ export default {
         async fetchProjects() {
             try {
                 const response = await axios.get('http://127.0.0.1:8001/api/projects');
-                this.projects = response.data;
+                this.projects = response.data.data;
                 console.log(this.projects); // Stampa i risultati in console per verifica
             } catch (error) {
                 console.error('Errore nel recuperare i progetti:', error);
