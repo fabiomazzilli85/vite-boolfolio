@@ -42,4 +42,19 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 80px;
+}
+
+h1 {
+    color: #1679ab;
+    text-shadow: 3px 3px 5px #000000;
+    padding: 15px;
+    border-radius: 4px;
+}
+</style>
