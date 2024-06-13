@@ -13,31 +13,30 @@
 
 <script>
 import axios from 'axios';
-import ProjectsComponent from './ProjectsComponent.vue';
 
 export default {
     components: {
         ProjectsComponent
     },
     data() {
-        return {
-            projects: [] // Inizializza i dati dei progetti
-        };
-    },
-    created() {
-        this.fetchProjects();
-    },
-    methods: {
-        async fetchProjects() {
-            try {
-                const response = await axios.get('http://127.0.0.1:8001/api/projects');
-                this.projects = response.data;
-            } catch (error) {
-                console.error('Errore nel recuperare i progetti:', error);
-                // Tra l'altro non compare il messaggio in Console Log.
-            }
-        }
+    return {
+      projects: []
+    };
+  },
+  created() {
+    this.fetchProjects();
+  },
+  methods: {
+    async fetchProjects() {
+      try {
+        const response = await axios.get('http://127.0.0.1:8001/api/projects');
+        this.projects = response.data;
+        console.log(this.projects); // Stampa i risultati in console per verifica
+      } catch (error) {
+        console.error('Errore nel recuperare i progetti:', error);
+      }
     }
+  }
 };
 </script>
 
